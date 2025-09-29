@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quad Formula</title>
+    <style>
+    
+    .title {
+  color: rgb(7, 98, 110);
+  font-family: verdana;
+  font-size: 200%;
+    }
+    .label{
+    color: blue;
+border: 2px solid powderblue;
+    }
+    .button{
+        background-color:crimson;
+        padding: 10px; ;
+        border: none;
+        width:100px ;
+        border-radius:8px ;
+        margin-bottom: 15px;
+        text-align:center
+    }
+    .output{
+color:crimson
+    }
+    body{
+        background-color: powderblue;
+        text-align: center;
+    }
+    input{
+        padding: 10px; ;
+        border: none;
+        width:200px ;
+        border-radius:8px ;
+        margin-bottom: 15px;
+        text-align:center
+    }
+  
+    </style>
+</head>
+<body>
+<h1 class="title">Quadratic Formula Calculator</h1>
+ <label class="label">Value of A </label><br><input  id="inputA" value="1" maxlength="4" size="8"></input><br>
+<label class="label">Value of B </label><br><input  id="inputB" value="3" maxlength="4" size="8"></input><br>
+<label class="label">Value of C </label><br><input  id="inputC" value="-4"maxlength="4" size="8"></input><br>
+<button onclick="Quadform()"class="button">calculate</button>
+<h1 id="output" class="output"></h1>
+<script>
+    function Quadform(){
+// read in values from text boxes
+let valA = document.getElementById("inputA").value;
+let valB = document.getElementById("inputB").value;
+let valC = document.getElementById("inputC").value;
+// test that reading values was successful
+console.log(valA);
+console.log(valB);
+console.log(valC);
+// parse to numbers including decimals
+a = parseFloat(valA);
+b = parseFloat(valB);
+c = parseFloat(valC);
+// test that numeric values are assigned
+console.log(`This is the a value: ${a}`);
+console.log(`This is the b value: ${b}`);
+console.log(`This is the c value: ${c}`);
+let underRoot = b**2-4*a*c;
+//test underroot
+console.log(`The calculations under the square root sign result in: ${underRoot}`);
+let sqRoot = Math.sqrt(underRoot);
+//test sqRoot
+console.log(`The square root of ${underRoot} is: ${sqRoot}`);
+//test positive and negative numerators
+let posNumer = -b + sqRoot
+let negNumer = -b - sqRoot
+console.log(`The positive numerator is: ${posNumer}`);
+console.log(`The negative numerator is: ${negNumer}`);
+let denom = 2*a
+console.log(`the denominator is ${denom}` );
+//test denominator
+let posx = posNumer/denom
+let negx = negNumer/denom
+console.log(`the possiticve root is ${posx}`);
+console.log(` the negative root is ${negx}`);
+// test pos and neg x 
+    let display = `The roots are (${posx},0) and (${negx},0)`
+document.getElementById("output").innerHTML = display;
+}
+
+
+</script>
+</body>
+</html>

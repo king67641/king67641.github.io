@@ -1,0 +1,62 @@
++<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+    <style>
+     body {
+        text-align:center
+     }
+     button {
+        color:white
+     }
+    </style>
+</head>
+<body>
+<input type = "text" id="1">
+<input type = "text" id="2">
+<br>
+<button onclick="add()" style="background-color:Tomato;">add</button><br>
+<button onclick="sub()" style="background-color:blue;">subtraction</button><br>
+<button onclick="muti()" style="background-color:blueviolet;">Times</button><br>
+<button onclick="devi()" style="background-color:mediumvioletred;">division</button>
+
+<h1 id="sum"></h1>
+<script>
+function add() {
+let numone = document.getElementById("1").value;
+let numtwo = document.getElementById("2").value;
+num1 = parseFloat(numone);
+num2 = parseFloat(numtwo);
+let answ = num1 + num2 
+document.getElementById("sum").innerHTML = answ;
+}
+
+function sub() {
+let numone = document.getElementById("1").value;
+let numtwo = document.getElementById("2").value;
+num1 = parseFloat(numone);
+num2 = parseFloat(numtwo);
+let answ = num1 - num2 
+document.getElementById("sum").innerHTML = answ;
+}
+function muti() {
+let numone = document.getElementById("1").value;
+let numtwo = document.getElementById("2").value;
+num1 = parseFloat(numone);
+num2 = parseFloat(numtwo);
+let answ = num1 * num2 
+document.getElementById("sum").innerHTML = answ;
+}
+function devi() {
+let numone = document.getElementById("1").value;
+let numtwo = document.getElementById("2").value;
+num1 = parseFloat(numone);
+num2 = parseFloat(numtwo);
+let answ = num1 / num2 
+document.getElementById("sum").innerHTML = answ;
+}
+</script>
+</body>
+</html>

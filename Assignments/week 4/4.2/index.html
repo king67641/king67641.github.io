@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "text" id="1">
+<input type = "text" id="2">
+<h1 id="sum"></h1>
+<button onclick="multNumbers()" style="background-color:Tomato;"></button>
+    <script>
+     
+     let answer = multNumbers();
+     let answer2 = addNumber(answer);
+     document.write(answer2);
+
+      function multNumbers()
+      {
+     let numone = document.getElementById("1").value;
+let numtwo = document.getElementById("2").value;
+num1 = parseFloat(numone);
+num2 = parseFloat(numtwo);
+        let z = num1 * num2;
+       
+        return z;
+      }
+
+      function addNumber(num3)
+      {
+        let num4 = num3 + num3;
+        return num4;
+      }
+ 
+  </script>
+</body>
+</html>
