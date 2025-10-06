@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+       
+       body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #dd1943;
+        }
+       .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 80%;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #a52121;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Ticket Price Calculator</h2>
+    
+    <label for="age">Enter your age:</label>
+    <input type="number" id="age" placeholder="Your Age" required>
+    
+    <label for="gender">Enter your gender:</label>
+    <select id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    
+    <br><br>
+    <button onclick="calculateTicket()">Buy Ticket</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateTicket() {
+        // Get values from input fields
+        let age = parseInt(document.getElementById('age').value);
+        let gender = document.getElementById('gender').value;
+        let ticketPrice = 0;
+        let discount = 0;
+
+        // Determine base ticket price
+        if (age >= 18) {
+            ticketPrice = 21.00;
+        } else if (age >= 12 && age < 18) {
+            ticketPrice = 14.00;
+        } else if (age < 12) {
+            ticketPrice = 7.00;
+        }
+
+        // Apply discount for females
+        if (gender === "Female") {
+            discount = 0.25; // 25% discount
+        }
+
+        // Calculate the final price after discount
+        let finalPrice = ticketPrice * (1 - discount);
+
+        // Display the result
+        let resultElement = document.getElementById('result');
+        resultElement.innerHTML = `The ticket price is $${finalPrice.toFixed(2)}.`;
+
+        // Clear the input fields
+        document.getElementById('age').value = '';
+        document.getElementById('gender').value = 'Male';
+    }
+</script>
+    
+</body>
+</html>
