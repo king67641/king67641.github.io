@@ -60,13 +60,13 @@
 
 <script>
     function calculateTicket() {
-        // Get values from input fields
+        
         let age = parseInt(document.getElementById('age').value);
         let gender = document.getElementById('gender').value;
         let ticketPrice = 0;
         let discount = 0;
 
-        // Determine base ticket price
+        
         if (age >= 18) {
             ticketPrice = 21.00;
         } else if (age >= 12 && age < 18) {
@@ -75,19 +75,19 @@
             ticketPrice = 7.00;
         }
 
-        // Apply discount for females
+        
         if (gender === "Female") {
-            discount = 0.25; // 25% discount
+            discount = 0.25; 
         }
 
-        // Calculate the final price after discount
+        
         let finalPrice = ticketPrice * (1 - discount);
 
-        // Display the result
+        
         let resultElement = document.getElementById('result');
         resultElement.innerHTML = `The ticket price is $${finalPrice.toFixed(2)}.`;
 
-        // Clear the input fields
+        
         document.getElementById('age').value = '';
         document.getElementById('gender').value = 'Male';
     }
