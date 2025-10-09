@@ -6,7 +6,7 @@
     <title>Country Flags</title>
 </head>
 <body>
-    <label for="country">Select a country:</label>
+  <label for="country">Select a country:</label>
    <select id="country" name="country">
   <option value="canada">Canada</option>
   <option value="india">India</option>
@@ -14,11 +14,9 @@
   <option value="usa">USA</option>
   <option value="italy">Italy</option>
 </select>
-<button onclick="showflag()">Show Flag</button>
-<br>
-<img id="flagimage" scr="" alt="flag will appear here" width="250">
 
-<script>
+
+<!-- <script>
   let country;
   function showflag() {
     alert("So far so good");
@@ -29,7 +27,44 @@
       flagPath = "Canada.png";
     }
   }
-</script>
+</script> --> 
+ 
+ 
+  <!-- The container where the image will appear -->
+  <div id="flagContainer"></div>
+ 
+  <br>
+ 
+  <!-- Button to trigger the function -->
+  <button onclick="showFlag()">Show Flag</button>
 
+  <script>
+    function showFlag() {
+      // Create an image element
+     country=document.getElementById("country").value;
+      if (country == "canada") {
+        flagPath = "Canada.png";
+        let img = document.createElement("img");
+        img.src = "Canada.png";        // Path to your image
+        img.alt = "Canadian Flag";     // Accessibility text
+        img.width = 300;               // Optional size
+      }
+      else if(country == "china") {
+        alert("welcome to china")
+        flagPath = "China.png";
+        let img = document.createElement("img");
+        img.src = "China.png";        // Path to your image
+        img.alt = "China Flag";     // Accessibility text
+        img.width = 300;               // Optional size
+      }
+      else{
+
+      }
+      // Get the container and clear it before displaying new image
+      let container = document.getElementById("flagContainer");
+      container.innerHTML = ""; // Clear previous content
+      container.appendChild(img);
+    }
+  </script>
 </body>
 </html>
