@@ -14,16 +14,19 @@
   <option value="usa">USA</option>
   <option value="italy">Italy</option>
 </select>
-<button id="showflagbotton">Show Flag</button>
-<div id="flagDisplay"></div>
+<button onclick="showflag()">Show Flag</button>
+<br>
+<img id="flagimage" scr="" alt="flag will appear here" width="200">
 
 <script>
- document.getElementById('showflagbotton').addEventListener('click', function() {
-  var country = document.getElementById('country').value;
-  var flagDisplay = document.getElementById('flagDisplay');
- }
- 
-    
+  function showflag() {
+let country=document.getElementById("country").value;
+let flagPath="";
+if (country = "canada") {
+  flagPath = "img/Canada.png";
+}
+  }
 </script>
+
 </body>
 </html>

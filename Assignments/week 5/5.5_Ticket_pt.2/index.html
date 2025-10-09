@@ -6,6 +6,57 @@
     <title>Document</title>
 </head>
 <body>
+<div class="container">
+    <h2>Ticket Price Calculator</h2>
+    
+    <label for="age">Enter your age:</label>
+    <input type="number" id="age" placeholder="Your Age" required>
+    
+    <label for="gender">Enter your gender:</label>
+    <select id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    
+    <br><br>
+    <button onclick="calculateTicket()">Buy Ticket</button>
 
+    <div id="result"></div>
+</div>
+
+<script>
+    function calculateTicket() {
+        
+        let age = parseInt(document.getElementById('age').value);
+        let gender = document.getElementById('gender').value;
+        let ticketPrice = 0;
+        let discount = 0;
+
+        
+        if (age >= 18) {
+            ticketPrice = 21.00;
+        } else if (age >= 12 && age < 18) {
+            ticketPrice = 14.00;
+        } else if (age < 12) {
+            ticketPrice = 7.00;
+        }
+
+        
+        if (gender === "Female") {
+            discount = 0.25; 
+        }
+
+        
+        let finalPrice = ticketPrice * (1 - discount);
+
+        
+        let resultElement = document.getElementById('result');
+        resultElement.innerHTML = `The ticket price is $${finalPrice.toFixed(2)}.`;
+
+        
+        document.getElementById('age').value = '';
+        document.getElementById('gender').value = 'Male';
+    }
+</script>
 </body>
 </html>
