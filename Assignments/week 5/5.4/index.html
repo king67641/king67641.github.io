@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Country Flags</title>
 </head>
 <body>
     <label for="country">Select a country:</label>
-<select id="country" name="country">
+   <select id="country" name="country">
   <option value="canada">Canada</option>
   <option value="india">India</option>
   <option value="china">China</option>
@@ -16,15 +16,18 @@
 </select>
 <button onclick="showflag()">Show Flag</button>
 <br>
-<img id="flagimage" scr="" alt="flag will appear here" width="200">
+<img id="flagimage" scr="" alt="flag will appear here" width="250">
 
 <script>
+  let country;
   function showflag() {
-let country=document.getElementById("country").value;
-let flagPath="";
-if (country = "canada") {
-  flagPath = "img/Canada.png";
-}
+    alert("So far so good");
+    country=document.getElementById("country").value;
+    alert("country name being shown " + country);
+    let flagPath= "";
+    if (country == "canada") {
+      flagPath = "Canada.png";
+    }
   }
 </script>
 

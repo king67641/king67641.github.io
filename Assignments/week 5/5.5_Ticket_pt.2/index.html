@@ -33,21 +33,23 @@
         let discount = 0;
 
         
-        if (age >= 18) {
+        if (age >= 18 && gender == "Male") {
             ticketPrice = 21.00;
-        } else if (age >= 12 && age < 18) {
+        } else if (age >= 18 && gender == "Female") {
+            ticketPrice = 15.75
+        } else if (age >= 12 && age < 18 && gender=="Male") {
             ticketPrice = 14.00;
-        } else if (age < 12) {
+        } else if (age >= 12 && age < 18 && gender=="Female"){
+            ticketPrice = 10.50
+        }  else if (age < 12 && gender=="Male") {
             ticketPrice = 7.00;
+        }  else if (age < 12 && gender=="Female"){
+            ticketPrice = 5.25
         }
 
-        
-        if (gender === "Female") {
-            discount = 0.25; 
-        }
 
         
-        let finalPrice = ticketPrice * (1 - discount);
+        let finalPrice = ticketPrice;
 
         
         let resultElement = document.getElementById('result');
