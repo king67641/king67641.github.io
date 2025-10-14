@@ -1,68 +1,62 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Country Flags</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Country Flags</title>
 </head>
 <body>
+  <h1>Country Flags</h1>
+
   <label for="country">Select a country:</label>
-   <select id="country" name="country">
-  <option value="canada">Canada</option>
-  <option value="india">India</option>
-  <option value="china">China</option>
-  <option value="usa">USA</option>
-  <option value="italy">Italy</option>
-</select>
+  <select id="country" name="country">
+    <option value="canada">Canada</option>
+    <option value="india">India</option>
+    <option value="china">China</option>
+    <option value="usa">USA</option>
+    <option value="italy">Italy</option>
+  </select>
 
+  <br><br>
 
-<!-- <script>
-  let country;
-  function showflag() {
-    alert("So far so good");
-    country=document.getElementById("country").value;
-    alert("country name being shown " + country);
-    let flagPath= "";
-    if (country == "canada") {
-      flagPath = "Canada.png";
-    }
-  }
-</script> --> 
- 
- 
-  <!-- The container where the image will appear -->
-  <div id="flagContainer"></div>
- 
-  <br>
- 
-  <!-- Button to trigger the function -->
   <button onclick="showFlag()">Show Flag</button>
+
+  <div id="flagContainer"></div>
 
   <script>
     function showFlag() {
-      // Create an image element
-     country=document.getElementById("country").value;
-      if (country == "canada") {
-        flagPath = "Canada.png";
-        let img = document.createElement("img");
-        img.src = "Canada.png";        // Path to your image
-        img.alt = "Canadian Flag";     // Accessibility text
-        img.width = 300;               // Optional size
-      }
-      else if(country == "china") {
-        alert("welcome to china")
-        flagPath = "China.png";
-        let img = document.createElement("img");
-        img.src = "China.png";        // Path to your image
-        img.alt = "China Flag";     // Accessibility text
-        img.width = 300;               // Optional size
-      }
-      else{
+      // Get the selected country
+      let country = document.getElementById("country").value;
+      let flagPath = "";
+      let altText = "";
 
+      // Choose the correct image based on the country
+      if (country === "canada") {
+        flagPath = "Canada.png";
+        altText = "Flag of Canada";
+      } else if (country === "india") {
+        flagPath = "India.png";
+        altText = "Flag of India";
+      } else if (country === "china") {
+        flagPath = "China.png";
+        altText = "Flag of China";
+      } else if (country === "usa") {
+        flagPath = "USA.png";
+        altText = "Flag of the United States";
+      } else if (country === "italy") {
+        flagPath = "Italy.png";
+        altText = "Flag of Italy";
       }
-      // Get the container and clear it before displaying new image
+
+      // Create a new <img> element
+      let img = document.createElement("img");
+      img.src = flagPath;
+      img.alt = altText;
+      img.width = 300;
+
+      // Get the container and clear any previous image
       let container = document.getElementById("flagContainer");
-      container.innerHTML = ""; // Clear previous content
+      container.innerHTML = "";
       container.appendChild(img);
     }
   </script>
